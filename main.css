@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins' , sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #9e0b0b;
+}
+
+.game-container{
+    width: 320px;
+    height: 320px;
+    border: 1px solid #30a74e;
+    overflow: hidden;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.cell{
+    width: 77px;
+    height: 77px;
+    background-color: #c6c2c6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #000;
+}
+
+.score-container{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cell[data-value="2"]{
+    background-color: #a31b32;
+}
+.cell[data-value="4"]{
+    background-color: #1794bd;
+}
+.cell[data-value="8"]{
+    background-color: #1ec51e;
+}
+.cell[data-value="16"]{
+    background-color: #cfb41c;
+}
+.cell[data-value="32"]{
+    background-color: #f5723f;
+}
+.cell[data-value="64"]{
+    background-color: #1d6d8d;
+}
+.cell[data-value="128"]{
+    background-color: #a9a918;
+}
+.cell[data-value="256"]{
+    background-color: #1f9c8f;
+}
+.cell[data-value="512"]{
+    background-color: #c7317c;
+}
+.cell[data-value="1024"]{
+    background-color: #4025db;
+}
+.cell[data-value="2048"]{
+    background-color: #872412;
+}
+.cell[data-value="4096"]{
+    background-color: #840404;
+}
+
+#restart-btn{
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #3411c4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: red;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.grid-cell[data-value]{
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.new-tile{
+    animation: appear 0.3s;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
